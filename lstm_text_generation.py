@@ -76,7 +76,7 @@ for iteration in range(1, 60):
     print('-' * 50)
     print('Iteration', iteration)
     model.fit(X, y, batch_size=128, nb_epoch=1)
-    model.save_weights('my_model_weights.h5')
+    model.save_weights('my_model_weights.h5', overwrite=True)
 
     start_index = random.randint(0, len(text) - maxlen - 1)
 

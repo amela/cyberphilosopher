@@ -1,4 +1,7 @@
 # Cybernetic Philosopher
+#
+#   docker build -t cyberphilosopher .
+#	docker run -d -v /srv/storage/cyberphilosopher:/srv/output --name cyberphilosopher cyberphilosopher
 
 FROM debian:jessie
 MAINTAINER ami the white [http://amela.rocks/] <ami@tnode.com>
@@ -30,7 +33,7 @@ RUN ./requirements.sh
 ADD *.py ./
 
 # expose interface
-VOLUME /srv
+VOLUME /srv/output
 
 ENTRYPOINT ["/srv/venv/bin/python", "/srv/lstm_text_generation.py"]
 CMD []
